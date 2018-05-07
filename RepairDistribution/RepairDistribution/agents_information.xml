@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<agents>
+
+  <agent>
+    <id>1</id>
+    <name>Jorge Gonzalez</name>
+    <service_codes>
+      <code>ICE</code>
+      <code>ITM</code>
+    </service_codes>
+  </agent>
+  <agent>
+    <id>2</id>
+    <name>Ariana Bermudez</name>
+    <service_codes>
+      <code>ICE</code>
+      <code>IPD</code>
+      <code>IS</code>
+    </service_codes>
+  </agent>
+  <agent>
+    <id>3</id>
+    <name>Ruth Ulloa</name>
+    <service_codes>
+      <code>IS</code>
+    </service_codes>
+  </agent>
+</agents>
