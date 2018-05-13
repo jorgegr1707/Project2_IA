@@ -28,55 +28,82 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btn_openfile = new System.Windows.Forms.Button();
-            this.txt_filename = new System.Windows.Forms.TextBox();
-            this.txt_filepath = new System.Windows.Forms.TextBox();
+            this.btnLoadAgents = new System.Windows.Forms.Button();
+            this.btnShowAgents = new System.Windows.Forms.Button();
+            this.btnLoadServiceOrders = new System.Windows.Forms.Button();
+            this.btnShowServiceOrders = new System.Windows.Forms.Button();
+            this.btnDistributeServiceOrders = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btn_openfile
+            // btnLoadAgents
             // 
-            this.btn_openfile.Location = new System.Drawing.Point(12, 12);
-            this.btn_openfile.Name = "btn_openfile";
-            this.btn_openfile.Size = new System.Drawing.Size(96, 27);
-            this.btn_openfile.TabIndex = 0;
-            this.btn_openfile.Text = "Open File";
-            this.btn_openfile.UseVisualStyleBackColor = true;
-            this.btn_openfile.Click += new System.EventHandler(this.btn_openfile_Click);
+            this.btnLoadAgents.Location = new System.Drawing.Point(230, 100);
+            this.btnLoadAgents.Name = "btnLoadAgents";
+            this.btnLoadAgents.Size = new System.Drawing.Size(180, 40);
+            this.btnLoadAgents.TabIndex = 0;
+            this.btnLoadAgents.Text = "Load Agents";
+            this.btnLoadAgents.UseVisualStyleBackColor = true;
+            this.btnLoadAgents.Click += new System.EventHandler(this.btnLoadAgents_Click);
             // 
-            // txt_filename
+            // btnShowAgents
             // 
-            this.txt_filename.Location = new System.Drawing.Point(128, 16);
-            this.txt_filename.Name = "txt_filename";
-            this.txt_filename.Size = new System.Drawing.Size(184, 20);
-            this.txt_filename.TabIndex = 1;
+            this.btnShowAgents.Location = new System.Drawing.Point(230, 150);
+            this.btnShowAgents.Name = "btnShowAgents";
+            this.btnShowAgents.Size = new System.Drawing.Size(180, 40);
+            this.btnShowAgents.TabIndex = 1;
+            this.btnShowAgents.Text = "Show Agents";
+            this.btnShowAgents.UseVisualStyleBackColor = true;
+            this.btnShowAgents.Click += new System.EventHandler(this.btnShowAgents_Click);
             // 
-            // txt_filepath
+            // btnLoadServiceOrders
             // 
-            this.txt_filepath.Location = new System.Drawing.Point(12, 45);
-            this.txt_filepath.Name = "txt_filepath";
-            this.txt_filepath.Size = new System.Drawing.Size(300, 20);
-            this.txt_filepath.TabIndex = 2;
+            this.btnLoadServiceOrders.Location = new System.Drawing.Point(230, 200);
+            this.btnLoadServiceOrders.Name = "btnLoadServiceOrders";
+            this.btnLoadServiceOrders.Size = new System.Drawing.Size(180, 40);
+            this.btnLoadServiceOrders.TabIndex = 2;
+            this.btnLoadServiceOrders.Text = "Load Service Orders";
+            this.btnLoadServiceOrders.UseVisualStyleBackColor = true;
+            this.btnLoadServiceOrders.Click += new System.EventHandler(this.btnLoadServiceOrders_Click);
+            // 
+            // btnShowServiceOrders
+            // 
+            this.btnShowServiceOrders.Location = new System.Drawing.Point(230, 250);
+            this.btnShowServiceOrders.Name = "btnShowServiceOrders";
+            this.btnShowServiceOrders.Size = new System.Drawing.Size(180, 40);
+            this.btnShowServiceOrders.TabIndex = 3;
+            this.btnShowServiceOrders.Text = "Show Service Orders";
+            this.btnShowServiceOrders.UseVisualStyleBackColor = true;
+            this.btnShowServiceOrders.Click += new System.EventHandler(this.btnShowServiceOrders_Click);
+            // 
+            // btnDistributeServiceOrders
+            // 
+            this.btnDistributeServiceOrders.Location = new System.Drawing.Point(230, 300);
+            this.btnDistributeServiceOrders.Name = "btnDistributeServiceOrders";
+            this.btnDistributeServiceOrders.Size = new System.Drawing.Size(180, 40);
+            this.btnDistributeServiceOrders.TabIndex = 4;
+            this.btnDistributeServiceOrders.Text = "Distribute Service Orders";
+            this.btnDistributeServiceOrders.UseVisualStyleBackColor = true;
+            this.btnDistributeServiceOrders.Click += new System.EventHandler(this.btnDistributeServiceOrders_Click);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 205);
-            this.Controls.Add(this.txt_filepath);
-            this.Controls.Add(this.txt_filename);
-            this.Controls.Add(this.btn_openfile);
+            this.ClientSize = new System.Drawing.Size(624, 441);
+            this.Controls.Add(this.btnDistributeServiceOrders);
+            this.Controls.Add(this.btnShowServiceOrders);
+            this.Controls.Add(this.btnLoadServiceOrders);
+            this.Controls.Add(this.btnShowAgents);
+            this.Controls.Add(this.btnLoadAgents);
             this.Name = "Form1";
-            this.Text = "Form1";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btn_openfile;
-        private System.Windows.Forms.TextBox txt_filename;
-        private System.Windows.Forms.TextBox txt_filepath;
+        private System.Windows.Forms.Button btnLoadAgents;
+        private System.Windows.Forms.Button btnShowAgents;
+        private System.Windows.Forms.Button btnLoadServiceOrders;
+        private System.Windows.Forms.Button btnShowServiceOrders;
+        private System.Windows.Forms.Button btnDistributeServiceOrders;
     }
 }
 

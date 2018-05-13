@@ -13,11 +13,16 @@ namespace RepairDistribution
         public string Name { get; set; }
         public ArrayList ServiceCodes { get; set; }
 
-        public Agent(int ID, string Name, ArrayList ServiceCodes)
+        public Agent(int ID, string Name)
         {
             this.ID = ID;
             this.Name = Name;
-            this.ServiceCodes = ServiceCodes;
+            ServiceCodes = new ArrayList();
+        }
+
+        public void AddCode(string code)
+        {
+            ServiceCodes.Add(code);
         }
     }
 }
