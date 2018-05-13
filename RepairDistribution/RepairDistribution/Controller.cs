@@ -19,6 +19,7 @@ namespace RepairDistribution
             LoadXml();
         }
 
+        /*Singleton part xd*/
         public static Controller GetInstance()
         {
             if(controller == null)
@@ -28,7 +29,7 @@ namespace RepairDistribution
             return controller;
         }
 
-
+        /*Load XML file*/
         public void LoadXml()
         {
             try
@@ -41,7 +42,7 @@ namespace RepairDistribution
             { }
         }
 
-
+        /*Create XML, save it in project's directory*/
         public void CreateXml(string path)
         {
             xmlFile.CreateXml(path);

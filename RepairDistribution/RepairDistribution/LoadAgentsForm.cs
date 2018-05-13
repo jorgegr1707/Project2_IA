@@ -36,6 +36,8 @@ namespace RepairDistribution
             string path, extension;
             path = txtFileName.Text;
             extension = Path.GetExtension(path);
+
+            /*Verify if extension is correct*/
             if(extension.Equals(".xml"))
             {
                 controller.CreateXml(path);
