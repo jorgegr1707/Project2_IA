@@ -28,6 +28,8 @@ namespace RepairDistribution
 
         private void btnShowAgents_Click(object sender, EventArgs e)
         {
+			ShowAgents showAgents = new ShowAgents();
+			showAgents.Show();
             Hide();
         }
 

@@ -24,5 +24,16 @@ namespace RepairDistribution
         {
             ServiceCodes.Add(code);
         }
+
+		private string getServicesCodes()
+		{
+			string total = "";
+			List<string> codes = new List<string>(); 
+			foreach (string code in ServiceCodes)
+			{
+				codes.Add(code); 
+			}
+			return total; 
+		}
     }
 }
