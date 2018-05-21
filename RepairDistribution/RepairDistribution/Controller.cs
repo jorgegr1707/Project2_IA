@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace RepairDistribution
 {
-    class Controller
+    public class Controller
     {
         public ArrayList agents;
         private XmlFile xmlFile;

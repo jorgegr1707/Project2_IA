@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -67,6 +68,36 @@
     <Compile Include="ShowAgents.Designer.cs">
       <DependentUpon>ShowAgents.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Distribute.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Distribute.Designer.cs">
+      <DependentUpon>Distribute.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LoadServices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LoadServices.Designer.cs">
+      <DependentUpon>LoadServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ShowAgents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ShowAgents.Designer.cs">
+      <DependentUpon>ShowAgents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LoadAgents.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\LoadAgents.Designer.cs">
+      <DependentUpon>LoadAgents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\ShowServices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\ShowServices.Designer.cs">
+      <DependentUpon>ShowServices.cs</DependentUpon>
+    </Compile>
     <Compile Include="XmlFile.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -82,9 +113,25 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="ShowAgents.resx">
       <DependentUpon>ShowAgents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Distribute.resx">
+      <DependentUpon>Distribute.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LoadAgents.resx">
+      <DependentUpon>LoadAgents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\LoadServices.resx">
+      <DependentUpon>LoadServices.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ShowAgents.resx">
+      <DependentUpon>ShowAgents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\ShowServices.resx">
+      <DependentUpon>ShowServices.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -101,6 +148,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agents_information.xml" />
+    <None Include="Resources\watchservices.png" />
+    <None Include="Resources\watchagents.png" />
+    <None Include="Resources\loadservice.png" />
+    <None Include="Resources\loadagents .png" />
+    <None Include="Resources\distribution.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -28,73 +28,204 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnLoadAgents = new System.Windows.Forms.Button();
-            this.btnShowAgents = new System.Windows.Forms.Button();
-            this.btnLoadServiceOrders = new System.Windows.Forms.Button();
-            this.btnShowServiceOrders = new System.Windows.Forms.Button();
-            this.btnDistributeServiceOrders = new System.Windows.Forms.Button();
-            this.SuspendLayout();
-            // 
-            // btnLoadAgents
-            // 
-            this.btnLoadAgents.Location = new System.Drawing.Point(230, 100);
-            this.btnLoadAgents.Name = "btnLoadAgents";
-            this.btnLoadAgents.Size = new System.Drawing.Size(180, 40);
-            this.btnLoadAgents.TabIndex = 0;
-            this.btnLoadAgents.Text = "Load Agents";
-            this.btnLoadAgents.UseVisualStyleBackColor = true;
-            this.btnLoadAgents.Click += new System.EventHandler(this.btnLoadAgents_Click);
-            // 
-            // btnShowAgents
-            // 
-            this.btnShowAgents.Location = new System.Drawing.Point(230, 150);
-            this.btnShowAgents.Name = "btnShowAgents";
-            this.btnShowAgents.Size = new System.Drawing.Size(180, 40);
-            this.btnShowAgents.TabIndex = 1;
-            this.btnShowAgents.Text = "Show Agents";
-            this.btnShowAgents.UseVisualStyleBackColor = true;
-            this.btnShowAgents.Click += new System.EventHandler(this.btnShowAgents_Click);
-            // 
-            // btnLoadServiceOrders
-            // 
-            this.btnLoadServiceOrders.Location = new System.Drawing.Point(230, 200);
-            this.btnLoadServiceOrders.Name = "btnLoadServiceOrders";
-            this.btnLoadServiceOrders.Size = new System.Drawing.Size(180, 40);
-            this.btnLoadServiceOrders.TabIndex = 2;
-            this.btnLoadServiceOrders.Text = "Load Service Orders";
-            this.btnLoadServiceOrders.UseVisualStyleBackColor = true;
-            this.btnLoadServiceOrders.Click += new System.EventHandler(this.btnLoadServiceOrders_Click);
-            // 
-            // btnShowServiceOrders
-            // 
-            this.btnShowServiceOrders.Location = new System.Drawing.Point(230, 250);
-            this.btnShowServiceOrders.Name = "btnShowServiceOrders";
-            this.btnShowServiceOrders.Size = new System.Drawing.Size(180, 40);
-            this.btnShowServiceOrders.TabIndex = 3;
-            this.btnShowServiceOrders.Text = "Show Service Orders";
-            this.btnShowServiceOrders.UseVisualStyleBackColor = true;
-            this.btnShowServiceOrders.Click += new System.EventHandler(this.btnShowServiceOrders_Click);
-            // 
-            // btnDistributeServiceOrders
-            // 
-            this.btnDistributeServiceOrders.Location = new System.Drawing.Point(230, 300);
-            this.btnDistributeServiceOrders.Name = "btnDistributeServiceOrders";
-            this.btnDistributeServiceOrders.Size = new System.Drawing.Size(180, 40);
-            this.btnDistributeServiceOrders.TabIndex = 4;
-            this.btnDistributeServiceOrders.Text = "Distribute Service Orders";
-            this.btnDistributeServiceOrders.UseVisualStyleBackColor = true;
-            this.btnDistributeServiceOrders.Click += new System.EventHandler(this.btnDistributeServiceOrders_Click);
-            // 
-            // Form1
-            // 
-            this.ClientSize = new System.Drawing.Size(624, 441);
-            this.Controls.Add(this.btnDistributeServiceOrders);
-            this.Controls.Add(this.btnShowServiceOrders);
-            this.Controls.Add(this.btnLoadServiceOrders);
-            this.Controls.Add(this.btnShowAgents);
-            this.Controls.Add(this.btnLoadAgents);
-            this.Name = "Form1";
-            this.ResumeLayout(false);
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.btnLoadAgents = new System.Windows.Forms.Button();
+			this.btnDistributeServiceOrders = new System.Windows.Forms.Button();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.btnShowServiceOrders = new System.Windows.Forms.Button();
+			this.btnShowAgents = new System.Windows.Forms.Button();
+			this.btnLoadServiceOrders = new System.Windows.Forms.Button();
+			this.panel_image = new System.Windows.Forms.Panel();
+			this.distribute1 = new RepairDistribution.UserControls.Distribute();
+			this.showServices1 = new RepairDistribution.UserControls.ShowServices();
+			this.loadAgentsUC = new RepairDistribution.UserControls.LoadAgents();
+			this.panel3 = new System.Windows.Forms.Panel();
+			this.loadServices1 = new RepairDistribution.UserControls.LoadServices();
+			this.showAgents1 = new RepairDistribution.UserControls.ShowAgents();
+			this.panel1.SuspendLayout();
+			this.panel_image.SuspendLayout();
+			this.SuspendLayout();
+			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.btnLoadAgents);
+			this.panel1.Controls.Add(this.btnDistributeServiceOrders);
+			this.panel1.Controls.Add(this.panel2);
+			this.panel1.Controls.Add(this.btnShowServiceOrders);
+			this.panel1.Controls.Add(this.btnShowAgents);
+			this.panel1.Controls.Add(this.btnLoadServiceOrders);
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+			this.panel1.Location = new System.Drawing.Point(0, 0);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(259, 655);
+			this.panel1.TabIndex = 5;
+			// 
+			// btnLoadAgents
+			// 
+			this.btnLoadAgents.FlatAppearance.BorderSize = 0;
+			this.btnLoadAgents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLoadAgents.Image = global::RepairDistribution.Properties.Resources.loadagents_;
+			this.btnLoadAgents.Location = new System.Drawing.Point(3, 133);
+			this.btnLoadAgents.Name = "btnLoadAgents";
+			this.btnLoadAgents.Size = new System.Drawing.Size(253, 99);
+			this.btnLoadAgents.TabIndex = 0;
+			this.btnLoadAgents.Text = "Load Agents";
+			this.btnLoadAgents.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnLoadAgents.UseVisualStyleBackColor = true;
+			this.btnLoadAgents.Click += new System.EventHandler(this.btnLoadAgents_Click);
+			// 
+			// btnDistributeServiceOrders
+			// 
+			this.btnDistributeServiceOrders.FlatAppearance.BorderSize = 0;
+			this.btnDistributeServiceOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnDistributeServiceOrders.Image = global::RepairDistribution.Properties.Resources.distribution;
+			this.btnDistributeServiceOrders.Location = new System.Drawing.Point(3, 553);
+			this.btnDistributeServiceOrders.Name = "btnDistributeServiceOrders";
+			this.btnDistributeServiceOrders.Size = new System.Drawing.Size(253, 99);
+			this.btnDistributeServiceOrders.TabIndex = 4;
+			this.btnDistributeServiceOrders.Text = "Distribute Service Orders";
+			this.btnDistributeServiceOrders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnDistributeServiceOrders.UseVisualStyleBackColor = true;
+			this.btnDistributeServiceOrders.Click += new System.EventHandler(this.btnDistributeServiceOrders_Click);
+			// 
+			// panel2
+			// 
+			this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel2.Location = new System.Drawing.Point(0, 0);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(259, 131);
+			this.panel2.TabIndex = 0;
+			// 
+			// btnShowServiceOrders
+			// 
+			this.btnShowServiceOrders.FlatAppearance.BorderSize = 0;
+			this.btnShowServiceOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnShowServiceOrders.Image = global::RepairDistribution.Properties.Resources.watchservices;
+			this.btnShowServiceOrders.Location = new System.Drawing.Point(3, 448);
+			this.btnShowServiceOrders.Name = "btnShowServiceOrders";
+			this.btnShowServiceOrders.Size = new System.Drawing.Size(253, 99);
+			this.btnShowServiceOrders.TabIndex = 3;
+			this.btnShowServiceOrders.Text = "Show Service Orders";
+			this.btnShowServiceOrders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnShowServiceOrders.UseVisualStyleBackColor = true;
+			this.btnShowServiceOrders.Click += new System.EventHandler(this.btnShowServiceOrders_Click);
+			// 
+			// btnShowAgents
+			// 
+			this.btnShowAgents.FlatAppearance.BorderSize = 0;
+			this.btnShowAgents.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnShowAgents.Image = global::RepairDistribution.Properties.Resources.watchagents;
+			this.btnShowAgents.Location = new System.Drawing.Point(3, 238);
+			this.btnShowAgents.Name = "btnShowAgents";
+			this.btnShowAgents.Size = new System.Drawing.Size(253, 99);
+			this.btnShowAgents.TabIndex = 1;
+			this.btnShowAgents.Text = "Show Agents";
+			this.btnShowAgents.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnShowAgents.UseVisualStyleBackColor = true;
+			this.btnShowAgents.Click += new System.EventHandler(this.btnShowAgents_Click);
+			// 
+			// btnLoadServiceOrders
+			// 
+			this.btnLoadServiceOrders.FlatAppearance.BorderSize = 0;
+			this.btnLoadServiceOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+			this.btnLoadServiceOrders.Image = global::RepairDistribution.Properties.Resources.loadservice;
+			this.btnLoadServiceOrders.Location = new System.Drawing.Point(3, 343);
+			this.btnLoadServiceOrders.Name = "btnLoadServiceOrders";
+			this.btnLoadServiceOrders.Size = new System.Drawing.Size(253, 99);
+			this.btnLoadServiceOrders.TabIndex = 2;
+			this.btnLoadServiceOrders.Text = "Load Service Orders";
+			this.btnLoadServiceOrders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+			this.btnLoadServiceOrders.UseVisualStyleBackColor = true;
+			this.btnLoadServiceOrders.Click += new System.EventHandler(this.btnLoadServiceOrders_Click);
+			// 
+			// panel_image
+			// 
+			this.panel_image.Controls.Add(this.showAgents1);
+			this.panel_image.Controls.Add(this.loadServices1);
+			this.panel_image.Controls.Add(this.distribute1);
+			this.panel_image.Controls.Add(this.showServices1);
+			this.panel_image.Controls.Add(this.loadAgentsUC);
+			this.panel_image.Location = new System.Drawing.Point(262, 24);
+			this.panel_image.Name = "panel_image";
+			this.panel_image.Size = new System.Drawing.Size(716, 628);
+			this.panel_image.TabIndex = 6;
+			this.panel_image.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_image_Paint);
+			// 
+			// distribute1
+			// 
+			this.distribute1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.distribute1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.distribute1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+			this.distribute1.Location = new System.Drawing.Point(0, 0);
+			this.distribute1.Name = "distribute1";
+			this.distribute1.Size = new System.Drawing.Size(716, 628);
+			this.distribute1.TabIndex = 2;
+			this.distribute1.Load += new System.EventHandler(this.distribute1_Load);
+			// 
+			// showServices1
+			// 
+			this.showServices1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.showServices1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.showServices1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+			this.showServices1.Location = new System.Drawing.Point(0, 0);
+			this.showServices1.Name = "showServices1";
+			this.showServices1.Size = new System.Drawing.Size(716, 628);
+			this.showServices1.TabIndex = 1;
+			// 
+			// loadAgentsUC
+			// 
+			this.loadAgentsUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.loadAgentsUC.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.loadAgentsUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+			this.loadAgentsUC.Location = new System.Drawing.Point(0, 0);
+			this.loadAgentsUC.Name = "loadAgentsUC";
+			this.loadAgentsUC.Size = new System.Drawing.Size(716, 628);
+			this.loadAgentsUC.TabIndex = 0;
+			// 
+			// panel3
+			// 
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel3.Location = new System.Drawing.Point(259, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(719, 24);
+			this.panel3.TabIndex = 7;
+			// 
+			// loadServices1
+			// 
+			this.loadServices1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.loadServices1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.loadServices1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+			this.loadServices1.Location = new System.Drawing.Point(0, 0);
+			this.loadServices1.Name = "loadServices1";
+			this.loadServices1.Size = new System.Drawing.Size(716, 628);
+			this.loadServices1.TabIndex = 3;
+			// 
+			// showAgents1
+			// 
+			this.showAgents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.showAgents1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.showAgents1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+			this.showAgents1.Location = new System.Drawing.Point(0, 0);
+			this.showAgents1.Name = "showAgents1";
+			this.showAgents1.Size = new System.Drawing.Size(716, 628);
+			this.showAgents1.TabIndex = 4;
+			// 
+			// Form1
+			// 
+			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+			this.ClientSize = new System.Drawing.Size(978, 655);
+			this.Controls.Add(this.panel3);
+			this.Controls.Add(this.panel_image);
+			this.Controls.Add(this.panel1);
+			this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+			this.Name = "Form1";
+			this.Load += new System.EventHandler(this.Form1_Load);
+			this.panel1.ResumeLayout(false);
+			this.panel_image.ResumeLayout(false);
+			this.ResumeLayout(false);
 
         }
 
@@ -104,6 +235,15 @@
         private System.Windows.Forms.Button btnLoadServiceOrders;
         private System.Windows.Forms.Button btnShowServiceOrders;
         private System.Windows.Forms.Button btnDistributeServiceOrders;
-    }
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panel_image;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Panel panel3;
+		private UserControls.LoadAgents loadAgentsUC;
+		private UserControls.Distribute distribute1;
+		private UserControls.ShowServices showServices1;
+		private UserControls.LoadServices loadServices1;
+		private UserControls.ShowAgents showAgents1;
+	}
 }
 

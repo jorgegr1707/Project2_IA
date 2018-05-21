@@ -17,40 +17,77 @@ namespace RepairDistribution
         public Form1()
         {
             InitializeComponent();
+			loadAgentsUC.Hide();
+			loadServices1.Hide();
+			showAgents1.Hide(); 
+			showServices1.Hide();
+			distribute1.Hide(); 
         }
 
         private void btnLoadAgents_Click(object sender, EventArgs e)
         {
-            LoadAgentsForm loadForm = new LoadAgentsForm();
-            loadForm.Show();
-            Hide();
-        }
+			loadAgentsUC.Show();
+			loadServices1.Hide();
+			showAgents1.Hide();
+			showServices1.Hide();
+			distribute1.Hide();
+		}
 
         private void btnShowAgents_Click(object sender, EventArgs e)
         {
-			ShowAgents showAgents = new ShowAgents();
-			showAgents.Show();
-            Hide();
-        }
+			loadAgentsUC.Hide();
+			loadServices1.Hide();
+			showAgents1.Show();
+			showAgents1.LoadAgentsDataGridView(); 
+			showServices1.Hide();
+			distribute1.Hide();
+		}
 
         private void btnLoadServiceOrders_Click(object sender, EventArgs e)
         {
-            Hide();
-        }
+			loadAgentsUC.Hide();
+			loadServices1.Show();
+			showAgents1.Hide();
+			showServices1.Hide();
+			distribute1.Hide();
+		}
 
         private void btnShowServiceOrders_Click(object sender, EventArgs e)
         {
-            Hide();
-        }
+			loadAgentsUC.Hide();
+			loadServices1.Hide();
+			showAgents1.Hide();
+			showServices1.Show();
+			distribute1.Hide();
+		}
 
         private void btnDistributeServiceOrders_Click(object sender, EventArgs e)
         {
-            Hide();
-        }
+			loadAgentsUC.Hide();
+			loadServices1.Hide();
+			showAgents1.Hide();
+			showServices1.Hide();
+			distribute1.Show();
+		}
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+
+		}
+
+		private void panel_image_Paint(object sender, PaintEventArgs e)
+		{
+
+		}
+
+		private void distribute1_Load(object sender, EventArgs e)
+		{
+
+		}
 
 
 
-        /*private void btn_openfile_Click(object sender, EventArgs e)
+		/*private void btn_openfile_Click(object sender, EventArgs e)
         {
             
             if (ofd.ShowDialog() == DialogResult.OK)
@@ -70,5 +107,5 @@ namespace RepairDistribution
 
             }
         }*/
-    }
+	}
 }
