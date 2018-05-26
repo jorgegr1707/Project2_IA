@@ -40,7 +40,7 @@ namespace RepairDistribution
             /*Verify if extension is correct*/
             if(extension.Equals(".xml"))
             {
-                controller.CreateXml(path);
+                controller.CreateXmlAgents(path);
             }
             Form1 form1 = new Form1();
             form1.Show();

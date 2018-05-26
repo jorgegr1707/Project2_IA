@@ -11,48 +11,62 @@ namespace RepairDistribution
 {
     class XmlFile
     {
-        XDocument doc;      /*Document of agents*/
+        XDocument docAgents;      /*Document of agents*/
+        XDocument docOrders;      /*Document of orders*/
         public ArrayList dataAgents;    /*Array of agents information (ID, name, service codes)*/
+        public ArrayList dataOrders;    /*Array of orders information(ID, client, service code)*/
 
         public XmlFile()
         {
             dataAgents = new ArrayList();
+            dataOrders = new ArrayList();
         }
         
         /************************************************
-         *Function that creates the XML, this function  *
-         *saves the file inside the project.            *
+         *Functions that creates the XML, this functions*
+         *save the file inside the project.             *
          *Parameters:                                   *
          *      path: string that contains the path of  *
          *              the file to cosult.             *
          ************************************************/
-        public void CreateXml(string path)
+        public void CreateXmlAgents(string path)
         {
-            LoadXml(path);
-            doc.Save(Environment.CurrentDirectory + "\\data_agents.xml");
+            LoadXmlAgents(path);
+            docAgents.Save(Environment.CurrentDirectory + "\\data_agents.xml");
+        }
+
+        public void CreateXmlOrders(string path)
+        {
+            LoadXmlOrders(path);
+            docOrders.Save(Environment.CurrentDirectory + "\\data_orders.xml");
         }
 
 
         /************************************************
-         *Function that load a XML file.                *
+         *Functions that load a XML file.               *
          *Parameters:                                   *
          *      path: string that contains the path of  *
          *              the file to cosult.             *
          ************************************************/
-        public void LoadXml(string path)
+        public void LoadXmlAgents(string path)
         {
-            doc = XDocument.Load(path);
+            docAgents = XDocument.Load(path);
+        }
+
+        public void LoadXmlOrders(string path)
+        {
+            docOrders = XDocument.Load(path);
         }
 
         /************************************************
-         *Function that read the XML file and store data*
-         *of every agent in an array.                   *
+         *Functions that read the XML file and store da-*
+         *ta of every agent in an array.                *
          ************************************************/
-        public void ReadXml()
+        public void ReadXmlAgents()
         {
 
             /*Get each agent of the file*/
-            foreach(XElement element in doc.Descendants("agent"))
+            foreach(XElement element in docAgents.Descendants("agent"))
             {
 
                 /*Get ID and name of agent*/
@@ -78,12 +92,28 @@ namespace RepairDistribution
             }
         }
 
+        public void ReadXmlOrders()
+        {
+            /* Get each order of the file */
+            foreach (XElement element in docOrders.Descendants("order"))
+            {
+                /* Get ID, client and service code */
+                ArrayList dataOrder = new ArrayList
+                {
+                    element.Element("id").Value,
+                    element.Element("client").Value,
+                    element.Element("service").Value
+                };
+                dataOrders.Add(dataOrder);
+            }
+        }
+
 
         /************************************************
-         *Function that returns all the agents of the   *
-         *array.                                        *
+         *Functions that returns an array (agents or    *
+         * services)                                    *
          *Returns:                                      *
-         *      Array-list of agents                    *
+         *      Array-list (agents or services)         *
          ************************************************/
         public ArrayList GetAgents()
         {
@@ -121,6 +151,35 @@ namespace RepairDistribution
             }
             /*End Debug part*/
             return agents;
+        }
+
+        public ArrayList GetOrders()
+        {
+            ArrayList orders = new ArrayList();
+
+            /* Get data of order */
+            foreach(ArrayList dataOrder in dataOrders)
+            {
+                Order order;
+
+                int ID = Int32.Parse(dataOrder[0].ToString());
+                string client = dataOrder[1].ToString();
+                string code = dataOrder[2].ToString();
+
+                /* Create order and add it in array orders*/
+                order = new Order(ID, client, code);
+                orders.Add(order);
+            }
+
+            /* Debug part */
+            foreach(Order order in orders)
+            {
+                Console.WriteLine(order.ID);
+                Console.WriteLine(order.Client);
+                Console.WriteLine(order.ServiceCode);
+            }
+            /* End Debug part*/
+            return orders;
         }
     }
 }

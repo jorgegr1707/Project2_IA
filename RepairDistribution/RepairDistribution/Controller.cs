@@ -11,13 +11,15 @@ namespace RepairDistribution
     public class Controller
     {
         public ArrayList agents;
+        public ArrayList orders;
         private XmlFile xmlFile;
         private static Controller controller = null;
 
         private Controller()
         {
             xmlFile = new XmlFile();
-            LoadXml();
+            LoadXmlAgents();
+            LoadXmlOrders();
         }
 
         /*Singleton part xd*/
@@ -31,23 +33,41 @@ namespace RepairDistribution
         }
 
         /*Load XML file*/
-        public void LoadXml()
+        public void LoadXmlAgents()
         {
             try
             {
-                xmlFile.LoadXml(Environment.CurrentDirectory + "\\data_agents.xml");
-                xmlFile.ReadXml();
+                xmlFile.LoadXmlAgents(Environment.CurrentDirectory + "\\data_agents.xml");
+                xmlFile.ReadXmlAgents();
                 agents = xmlFile.GetAgents();
             }
             catch(Exception)
             { }
         }
 
-        /*Create XML, save it in project's directory*/
-        public void CreateXml(string path)
+        public void LoadXmlOrders()
         {
-            xmlFile.CreateXml(path);
-            LoadXml();
+            try
+            {
+                xmlFile.LoadXmlOrders(Environment.CurrentDirectory + "\\data_orders.xml");
+                xmlFile.ReadXmlOrders();
+                orders = xmlFile.GetOrders();
+            }
+            catch(Exception)
+            { }
+        }
+
+        /*Create XML, save it in project's directory*/
+        public void CreateXmlAgents(string path)
+        {
+            xmlFile.CreateXmlAgents(path);
+            LoadXmlAgents();
+        }
+
+        public void CreateXmlOrders(string path)
+        {
+            xmlFile.CreateXmlOrders(path);
+            LoadXmlOrders();
         }
     }
 }
