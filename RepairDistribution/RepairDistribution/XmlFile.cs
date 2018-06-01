@@ -13,8 +13,10 @@ namespace RepairDistribution
     {
         XDocument docAgents;      /*Document of agents*/
         XDocument docOrders;      /*Document of orders*/
+        XDocument docServices;
         public ArrayList dataAgents;    /*Array of agents information (ID, name, service codes)*/
         public ArrayList dataOrders;    /*Array of orders information(ID, client, service code)*/
+        public ArrayList dataServices;
 
         public XmlFile()
         {

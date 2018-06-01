@@ -12,6 +12,7 @@ namespace RepairDistribution
     {
         public ArrayList agents;
         public ArrayList orders;
+        public ArrayList services;
         private XmlFile xmlFile;
         private static Controller controller = null;
 

@@ -22,6 +22,7 @@ namespace RepairDistribution
 			showAgents1.Hide(); 
 			showServices1.Hide();
 			distribute1.Hide(); 
+
         }
 
         private void btnLoadAgents_Click(object sender, EventArgs e)
