@@ -9,15 +9,20 @@ namespace RepairDistribution
 {
     class GeneticAlgorithm
     {
-        Controller controller = Controller.GetInstance();
-        List<List<Agent>> population;
+        ArrayList agents;
+        ArrayList orders;
+        ArrayList services;
+        public List<List<Agent>> population;
         List<float> fitness;
         int limit_gens;
         Double mutation_percent;
         Random random = new Random();
 
-        public GeneticAlgorithm()
+        public GeneticAlgorithm(ArrayList agents, ArrayList orders, ArrayList services)
         {
+            this.agents = agents;
+            this.orders = orders;
+            this.services = services;
             population = new List<List<Agent>>();
             fitness = new List<float>();
             limit_gens = 500;
@@ -30,21 +35,34 @@ namespace RepairDistribution
             for (int i = 0; i < limit_gens; i++)
             {
                 List<Agent> individual = new List<Agent>();
-                for (int j = 0; j < controller.orders.Count; j++)
+                for (int j = 0; j < orders.Count; j++)
                 {
-                    individual.Add((Agent) controller.agents[random.Next(controller.agents.Count)]);
+                    individual.Add(agents[random.Next(agents.Count)] as Agent);
 
                 }
                 individual = check_distribution(individual);
                 population.Add(individual);
 
             }
+
+            /*Debug part*/
+            /*int pos = 0;
+            foreach(List<Agent> agents in population)
+            {
+                Console.WriteLine("Individual: " + pos);
+                foreach(Agent agent in agents)
+                {
+                    Console.WriteLine("\tID: " + agent.ID + ", name: " + agent.Name);
+                }
+                pos++;
+            }*/
+            /*End debug part*/
             
         }
         //check if every agent has a order (minimum)
         public List<Agent> check_distribution(List<Agent> individual)
         {
-            foreach(Agent agent in controller.agents)
+            foreach(Agent agent in agents)
             {
                 if (!individual.Contains(agent))
                 {
@@ -56,7 +74,7 @@ namespace RepairDistribution
 
         public Service find_service(Order order)
         {
-            foreach(Service service in controller.services)
+            foreach(Service service in services)
             {
                 if(service.Code == order.ServiceCode)
                 {
@@ -73,20 +91,28 @@ namespace RepairDistribution
             for(int i = 0; i < individual.Count; i++)
             {
                 int sum = 0;
-                for (int j = 0; j < controller.agents.Count; j++)
+                for (int j = 0; j < agents.Count; j++)
                 {
-                    if (controller.agents[j].Equals(individual[i]))
+                    if (agents[j].Equals(individual[i]))
                     {
-                        Order order = (Order)controller.orders[i];
+                        Order order = (Order)orders[i];
                         sum = find_service(order).Commission;
                     }
                 }
                 commissions.Add(sum);
             }
+
+            /* Debug part */
+            foreach(int commission in commissions)
+            {
+                Console.WriteLine(commission);
+            }
+            /* End debug part*/
+
             return commissions;
         }
 
-        //calculate varaince between commissions for each agent
+        //calculate variance between commissions for each agent
         public float variance(List<int> individual)
         {
             double average = 0;
@@ -111,12 +137,14 @@ namespace RepairDistribution
             for (int i = 0; i < individual.Count; i++)
             {
                 int hours = 0;
-                for (int j = 0; j < controller.agents.Count; j++)
+                for (int j = 0; j < agents.Count; j++)
                 {
-                    if (controller.agents[j].Equals(individual[i]))
+                    if (agents[j].Equals(individual[i]))
                     {
-                        Order order = (Order)controller.orders[i];
-                        Agent agent = (Agent)controller.agents[j];
+                        Order order = (Order)orders[i];
+                        Agent agent = (Agent)agents[j];
+
+                        /*Pregunta: ¿No deberia sumar?, Porque creo que nunca llegaría a las 40 horas*/
                         hours = find_service(order).Duration;
                         if(hours > 40 || !agent.ServiceCodes.Contains(order.ServiceCode))
                         {
@@ -153,8 +181,8 @@ namespace RepairDistribution
                     double random_mutate = (Double)(random.Next(100) / 100);
                     if (random_mutate < mutation_percent)
                     {
-                        int lenght = random.Next(controller.agents.Count);
-                        individual[i] = (Agent)controller.agents[lenght];
+                        int lenght = random.Next(agents.Count);
+                        individual[i] = (Agent)agents[lenght];
                     }
                     
                 }

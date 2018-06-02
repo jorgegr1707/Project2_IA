@@ -1,0 +1,475 @@
+<agents>
+	<agent>
+		<id>1</id>
+		<name>Joanna Figueroa</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>2</id>
+		<name>Clay Page</name>
+		<service_codes>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>3</id>
+		<name>Joy Bridges</name>
+		<service_codes>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>4</id>
+		<name>Raymond Bridges</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>5</id>
+		<name>Joy Rose</name>
+		<service_codes>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>6</id>
+		<name>Susie Norris</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>7</id>
+		<name>Jamie Salazar</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>8</id>
+		<name>Joy Ruiz</name>
+		<service_codes>
+			<code>ICG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>9</id>
+		<name>Raymond Hale</name>
+		<service_codes>
+			<code>ILA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>10</id>
+		<name>Chester Fletcher</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>11</id>
+		<name>Charlotte Hanson</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>12</id>
+		<name>Jeffrey Doyle</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>13</id>
+		<name>Lawrence Bridges</name>
+		<service_codes>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>14</id>
+		<name>Jeffrey Nash</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>15</id>
+		<name>Susie Rose</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>16</id>
+		<name>Jamie Fuller</name>
+		<service_codes>
+			<code>RCE</code>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>17</id>
+		<name>Madeline Salazar</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>18</id>
+		<name>Joy Page</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>19</id>
+		<name>Chester Caldwell</name>
+		<service_codes>
+			<code>ILA</code>
+			<code>RCE</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>20</id>
+		<name>Jeffrey Salazar</name>
+		<service_codes>
+			<code>ICE</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>21</id>
+		<name>Chester Figueroa</name>
+		<service_codes>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>22</id>
+		<name>Clay Doyle</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>23</id>
+		<name>Estelle Rose</name>
+		<service_codes>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>24</id>
+		<name>Rudy Marsh</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>RCE</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>25</id>
+		<name>Luz Hale</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>26</id>
+		<name>Jessie Hanson</name>
+		<service_codes>
+			<code>ILA</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>27</id>
+		<name>Joy Figueroa</name>
+		<service_codes>
+			<code>ICG</code>
+			<code>ILA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>28</id>
+		<name>Rudy Nash</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>29</id>
+		<name>Susie Page</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>30</id>
+		<name>Jessie Cummings</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>RCE</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>31</id>
+		<name>Charlotte Nash</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>32</id>
+		<name>Chester Salazar</name>
+		<service_codes>
+			<code>RCE</code>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>33</id>
+		<name>Charlotte Lamb</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>34</id>
+		<name>Rudy Fletcher</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>35</id>
+		<name>Lawrence Bridges</name>
+		<service_codes>
+			<code>RCE</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>36</id>
+		<name>Joanna Nash</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>37</id>
+		<name>Jamie Lamb</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>38</id>
+		<name>Samantha Vega</name>
+		<service_codes>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>39</id>
+		<name>Cindy Doyle</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>40</id>
+		<name>Raymond Rose</name>
+		<service_codes>
+			<code>ICG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>41</id>
+		<name>Jamie Rose</name>
+		<service_codes>
+			<code>ICG</code>
+			<code>RCE</code>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>42</id>
+		<name>Johanna Bridges</name>
+		<service_codes>
+			<code>ICE</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>43</id>
+		<name>Rudy Page</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ICG</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>44</id>
+		<name>Joy Terry</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ILA</code>
+			<code>RCE</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>45</id>
+		<name>Tommy Marsh</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>ILA</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>46</id>
+		<name>Joanna Nash</name>
+		<service_codes>
+			<code>ICE</code>
+			<code>RCG</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>47</id>
+		<name>Jeffrey Figueroa</name>
+		<service_codes>
+			<code>ICE</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>48</id>
+		<name>Samantha Hale</name>
+		<service_codes>
+			<code>ICG</code>
+			<code>ILA</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>49</id>
+		<name>Johanna Figueroa</name>
+		<service_codes>
+			<code>ILA</code>
+			<code>RCG</code>
+			<code>RLA</code>
+		</service_codes>
+	</agent>
+	<agent>
+		<id>50</id>
+		<name>Luz Rose</name>
+		<service_codes>
+			<code>ILA</code>
+		</service_codes>
+	</agent>
+</agents>

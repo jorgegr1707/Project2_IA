@@ -52,7 +52,6 @@ namespace RepairDistribution
          ************************************************/
         public void LoadXmlAgents(string path)
         {
-			dataAgents = new ArrayList();
 			docAgents = XDocument.Load(path);
         }
 
@@ -67,9 +66,9 @@ namespace RepairDistribution
          ************************************************/
         public void ReadXmlAgents()
         {
-
+            dataAgents = new ArrayList();
             /*Get each agent of the file*/
-            foreach(XElement element in docAgents.Descendants("agent"))
+            foreach (XElement element in docAgents.Descendants("agent"))
             {
 
                 /*Get ID and name of agent*/
@@ -97,6 +96,7 @@ namespace RepairDistribution
 
         public void ReadXmlOrders()
         {
+            dataOrders = new ArrayList();
             /* Get each order of the file */
             foreach (XElement element in docOrders.Descendants("order"))
             {

@@ -10,6 +10,7 @@ namespace RepairDistribution
 {
     public class Controller
     {
+        GeneticAlgorithm genAlgorithm;
         public ArrayList agents;
         public ArrayList orders;
         public ArrayList services;
@@ -21,6 +22,16 @@ namespace RepairDistribution
             xmlFile = new XmlFile();
             LoadXmlAgents();
             LoadXmlOrders();
+            LoadServices();
+
+            /*Prueba crear poblacion inicial*/
+            genAlgorithm = new GeneticAlgorithm(agents, orders, services);
+            genAlgorithm.generate_population();
+
+            /*Prueba obtener comisiones*/
+            List<int> commissions = genAlgorithm.commission_agents(genAlgorithm.population[4]);
+            
+
         }
 
         /*Singleton part xd*/
@@ -53,9 +64,21 @@ namespace RepairDistribution
 				xmlFile.LoadXmlOrders(Environment.CurrentDirectory + "\\data_orders.xml");
                 xmlFile.ReadXmlOrders();
                 orders = xmlFile.GetOrders();
+                Console.WriteLine(orders.Count);
 			}
             catch(Exception)
             { }
+        }
+
+        public void LoadServices()
+        {
+            services = new ArrayList();
+            services.Add(new Service("ICE", "Instalación de Cocina Eléctrica", 2, 250));
+            services.Add(new Service("ICG", "Instalación de Cocina de Gas", 4, 400));
+            services.Add(new Service("ILA", "Instalación de Lavadora Automática", 1, 200));
+            services.Add(new Service("RCE", "Reparación de Cocina Eléctrica", 4, 300));
+            services.Add(new Service("RCG", "Reparación de Cocina de Gas", 6, 500));
+            services.Add(new Service("RLA", "Reparación de Lavadora Automática", 6, 250));
         }
 
         /*Create XML, save it in project's directory*/

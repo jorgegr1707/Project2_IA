@@ -26,8 +26,8 @@ client_last_names = ["Estrada", "Arias", "Swanson", "Diaz", "Nelson"
 service_codes = ["ICE", "ICG", "ILA", "RCE", "RCG", "RLA"]
 
 
-file_agents = open("agents.xml", "w+")
-file_orders = open("orders.xml", "w+")
+file_agents = open("data_agents.xml", "w+")
+file_orders = open("data_orders.xml", "w+")
 
 file_agents.write("<agents>\n")
 #Create agents
