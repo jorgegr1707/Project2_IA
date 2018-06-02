@@ -47,11 +47,6 @@ namespace RepairDistribution
             Hide();
         }
 
-		private void LoadAgentsForm_Load(object sender, EventArgs e)
-		{
-
-		}
-
 		private void txtFileName_TextChanged(object sender, EventArgs e)
 		{
 

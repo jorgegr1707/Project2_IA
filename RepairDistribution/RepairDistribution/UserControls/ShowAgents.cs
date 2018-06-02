@@ -14,7 +14,6 @@ namespace RepairDistribution.UserControls
 		{
 			InitializeComponent();
 			dataGridView1.EnableHeadersVisualStyles = false;
-			
 		}
 		
 		public void LoadAgentsDataGridView()
@@ -29,6 +28,11 @@ namespace RepairDistribution.UserControls
 				var result = string.Join(",", a.ServiceCodes.ToArray()
 					.Select(o => o.ToString()).ToArray());
 				dt.Rows.Add(new object[] { a.ID, a.Name, result });
+			}
+			if (dataGridView1.DataSource != null) {
+				Console.WriteLine("al menos entra aca> ?"); 
+				dataGridView1.DataSource = null;
+				dataGridView1.Rows.Clear(); 
 			}
 			dataGridView1.DataSource = dt;
 		}

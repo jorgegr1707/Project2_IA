@@ -52,7 +52,8 @@ namespace RepairDistribution
          ************************************************/
         public void LoadXmlAgents(string path)
         {
-            docAgents = XDocument.Load(path);
+			dataAgents = new ArrayList();
+			docAgents = XDocument.Load(path);
         }
 
         public void LoadXmlOrders(string path)

@@ -43,7 +43,7 @@
 			this.label1.Size = new System.Drawing.Size(374, 62);
 			this.label1.TabIndex = 10;
 			this.label1.Text = "Load Services File";
-			this.label1.Click += new System.EventHandler(this.label1_Click);
+			
 			// 
 			// txtFileName
 			// 
@@ -67,6 +67,7 @@
 			this.btnAccept.TabIndex = 8;
 			this.btnAccept.Text = "Ready";
 			this.btnAccept.UseVisualStyleBackColor = true;
+			this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
 			// 
 			// btnOpenFile
 			// 
@@ -79,6 +80,7 @@
 			this.btnOpenFile.TabIndex = 7;
 			this.btnOpenFile.Text = "Open File";
 			this.btnOpenFile.UseVisualStyleBackColor = true;
+			this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
 			// 
 			// LoadServices
 			// 

@@ -17,6 +17,7 @@ namespace RepairDistribution
         public Form1()
         {
             InitializeComponent();
+			init1.Show(); 
 			loadAgentsUC.Hide();
 			loadServices1.Hide();
 			showAgents1.Hide(); 
@@ -27,6 +28,7 @@ namespace RepairDistribution
 
         private void btnLoadAgents_Click(object sender, EventArgs e)
         {
+			init1.Hide();
 			loadAgentsUC.Show();
 			loadServices1.Hide();
 			showAgents1.Hide();
@@ -36,16 +38,18 @@ namespace RepairDistribution
 
         private void btnShowAgents_Click(object sender, EventArgs e)
         {
+			init1.Hide();
 			loadAgentsUC.Hide();
 			loadServices1.Hide();
+			showAgents1.LoadAgentsDataGridView();
 			showAgents1.Show();
-			showAgents1.LoadAgentsDataGridView(); 
 			showServices1.Hide();
 			distribute1.Hide();
 		}
 
         private void btnLoadServiceOrders_Click(object sender, EventArgs e)
         {
+			init1.Hide();
 			loadAgentsUC.Hide();
 			loadServices1.Show();
 			showAgents1.Hide();
@@ -55,15 +59,18 @@ namespace RepairDistribution
 
         private void btnShowServiceOrders_Click(object sender, EventArgs e)
         {
+			init1.Hide();
 			loadAgentsUC.Hide();
 			loadServices1.Hide();
 			showAgents1.Hide();
+			showServices1.LoadServicesDataGridView(); 
 			showServices1.Show();
 			distribute1.Hide();
 		}
 
         private void btnDistributeServiceOrders_Click(object sender, EventArgs e)
         {
+			init1.Hide();
 			loadAgentsUC.Hide();
 			loadServices1.Hide();
 			showAgents1.Hide();
@@ -83,6 +90,17 @@ namespace RepairDistribution
 
 		private void distribute1_Load(object sender, EventArgs e)
 		{
+
+		}
+
+		private void panel2_Paint(object sender, PaintEventArgs e)
+		{
+			init1.Show();
+			loadAgentsUC.Hide();
+			loadServices1.Hide();
+			showAgents1.Hide();
+			showServices1.Hide();
+			distribute1.Hide();
 
 		}
 

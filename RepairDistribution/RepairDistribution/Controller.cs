@@ -49,11 +49,11 @@ namespace RepairDistribution
         public void LoadXmlOrders()
         {
             try
-            {
-                xmlFile.LoadXmlOrders(Environment.CurrentDirectory + "\\data_orders.xml");
+            {	
+				xmlFile.LoadXmlOrders(Environment.CurrentDirectory + "\\data_orders.xml");
                 xmlFile.ReadXmlOrders();
                 orders = xmlFile.GetOrders();
-            }
+			}
             catch(Exception)
             { }
         }

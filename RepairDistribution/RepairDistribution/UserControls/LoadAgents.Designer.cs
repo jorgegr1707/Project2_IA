@@ -45,6 +45,7 @@
 			this.btnAccept.TabIndex = 4;
 			this.btnAccept.Text = "Ready";
 			this.btnAccept.UseVisualStyleBackColor = true;
+			this.btnAccept.Click += new System.EventHandler(this.btnAccept_Click);
 			// 
 			// btnOpenFile
 			// 
@@ -57,6 +58,7 @@
 			this.btnOpenFile.TabIndex = 3;
 			this.btnOpenFile.Text = "Open File";
 			this.btnOpenFile.UseVisualStyleBackColor = true;
+			this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
 			// 
 			// txtFileName
 			// 

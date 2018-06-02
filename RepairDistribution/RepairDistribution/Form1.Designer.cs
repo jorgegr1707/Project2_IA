@@ -36,12 +36,13 @@
 			this.btnShowAgents = new System.Windows.Forms.Button();
 			this.btnLoadServiceOrders = new System.Windows.Forms.Button();
 			this.panel_image = new System.Windows.Forms.Panel();
-			this.panel3 = new System.Windows.Forms.Panel();
-			this.loadAgentsUC = new RepairDistribution.UserControls.LoadAgents();
-			this.loadServices1 = new RepairDistribution.UserControls.LoadServices();
-			this.showAgents1 = new RepairDistribution.UserControls.ShowAgents();
-			this.showServices1 = new RepairDistribution.UserControls.ShowServices();
+			this.init1 = new RepairDistribution.UserControls.Init();
 			this.distribute1 = new RepairDistribution.UserControls.Distribute();
+			this.showServices1 = new RepairDistribution.UserControls.ShowServices();
+			this.showAgents1 = new RepairDistribution.UserControls.ShowAgents();
+			this.loadServices1 = new RepairDistribution.UserControls.LoadServices();
+			this.loadAgentsUC = new RepairDistribution.UserControls.LoadAgents();
+			this.panel3 = new System.Windows.Forms.Panel();
 			this.panel1.SuspendLayout();
 			this.panel_image.SuspendLayout();
 			this.SuspendLayout();
@@ -99,6 +100,7 @@
 			this.panel2.Name = "panel2";
 			this.panel2.Size = new System.Drawing.Size(259, 131);
 			this.panel2.TabIndex = 0;
+			this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
 			// 
 			// btnShowServiceOrders
 			// 
@@ -147,6 +149,7 @@
 			// 
 			// panel_image
 			// 
+			this.panel_image.Controls.Add(this.init1);
 			this.panel_image.Controls.Add(this.distribute1);
 			this.panel_image.Controls.Add(this.showServices1);
 			this.panel_image.Controls.Add(this.showAgents1);
@@ -158,43 +161,24 @@
 			this.panel_image.TabIndex = 6;
 			this.panel_image.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_image_Paint);
 			// 
-			// panel3
+			// init1
 			// 
-			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-			this.panel3.Location = new System.Drawing.Point(259, 0);
-			this.panel3.Name = "panel3";
-			this.panel3.Size = new System.Drawing.Size(719, 24);
-			this.panel3.TabIndex = 7;
+			this.init1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.init1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
+			this.init1.Location = new System.Drawing.Point(-3, 0);
+			this.init1.Name = "init1";
+			this.init1.Size = new System.Drawing.Size(716, 628);
+			this.init1.TabIndex = 5;
 			// 
-			// loadAgentsUC
+			// distribute1
 			// 
-			this.loadAgentsUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-			this.loadAgentsUC.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.loadAgentsUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
-			this.loadAgentsUC.Location = new System.Drawing.Point(0, 0);
-			this.loadAgentsUC.Name = "loadAgentsUC";
-			this.loadAgentsUC.Size = new System.Drawing.Size(716, 628);
-			this.loadAgentsUC.TabIndex = 0;
-			// 
-			// loadServices1
-			// 
-			this.loadServices1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-			this.loadServices1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.loadServices1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
-			this.loadServices1.Location = new System.Drawing.Point(0, 0);
-			this.loadServices1.Name = "loadServices1";
-			this.loadServices1.Size = new System.Drawing.Size(716, 628);
-			this.loadServices1.TabIndex = 1;
-			// 
-			// showAgents1
-			// 
-			this.showAgents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-			this.showAgents1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.showAgents1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
-			this.showAgents1.Location = new System.Drawing.Point(0, 0);
-			this.showAgents1.Name = "showAgents1";
-			this.showAgents1.Size = new System.Drawing.Size(716, 628);
-			this.showAgents1.TabIndex = 2;
+			this.distribute1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.distribute1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.distribute1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
+			this.distribute1.Location = new System.Drawing.Point(0, 0);
+			this.distribute1.Name = "distribute1";
+			this.distribute1.Size = new System.Drawing.Size(716, 628);
+			this.distribute1.TabIndex = 4;
 			// 
 			// showServices1
 			// 
@@ -206,15 +190,43 @@
 			this.showServices1.Size = new System.Drawing.Size(716, 628);
 			this.showServices1.TabIndex = 3;
 			// 
-			// distribute1
+			// showAgents1
 			// 
-			this.distribute1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
-			this.distribute1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.distribute1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
-			this.distribute1.Location = new System.Drawing.Point(0, 0);
-			this.distribute1.Name = "distribute1";
-			this.distribute1.Size = new System.Drawing.Size(716, 628);
-			this.distribute1.TabIndex = 4;
+			this.showAgents1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.showAgents1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.showAgents1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
+			this.showAgents1.Location = new System.Drawing.Point(0, 0);
+			this.showAgents1.Name = "showAgents1";
+			this.showAgents1.Size = new System.Drawing.Size(716, 628);
+			this.showAgents1.TabIndex = 2;
+			// 
+			// loadServices1
+			// 
+			this.loadServices1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.loadServices1.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.loadServices1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
+			this.loadServices1.Location = new System.Drawing.Point(0, 0);
+			this.loadServices1.Name = "loadServices1";
+			this.loadServices1.Size = new System.Drawing.Size(716, 628);
+			this.loadServices1.TabIndex = 1;
+			// 
+			// loadAgentsUC
+			// 
+			this.loadAgentsUC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(41)))), ((int)(((byte)(41)))));
+			this.loadAgentsUC.Dock = System.Windows.Forms.DockStyle.Fill;
+			this.loadAgentsUC.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
+			this.loadAgentsUC.Location = new System.Drawing.Point(0, 0);
+			this.loadAgentsUC.Name = "loadAgentsUC";
+			this.loadAgentsUC.Size = new System.Drawing.Size(716, 628);
+			this.loadAgentsUC.TabIndex = 0;
+			// 
+			// panel3
+			// 
+			this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel3.Location = new System.Drawing.Point(259, 0);
+			this.panel3.Name = "panel3";
+			this.panel3.Size = new System.Drawing.Size(719, 24);
+			this.panel3.TabIndex = 7;
 			// 
 			// Form1
 			// 
@@ -250,6 +262,7 @@
 		private UserControls.LoadServices loadServices1;
 		private UserControls.ShowServices showServices1;
 		private UserControls.Distribute distribute1;
+		private UserControls.Init init1;
 	}
 }
 

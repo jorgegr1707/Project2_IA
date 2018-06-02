@@ -84,7 +84,6 @@
 			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "LoadAgentsForm";
 			this.Text = "LoadAgentsForm";
-			this.Load += new System.EventHandler(this.LoadAgentsForm_Load);
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
