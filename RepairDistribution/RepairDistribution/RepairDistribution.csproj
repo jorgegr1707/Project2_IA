@@ -83,6 +83,12 @@
     <Compile Include="UserControls\LoadServices.Designer.cs">
       <DependentUpon>LoadServices.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Init.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\Init.Designer.cs">
+      <DependentUpon>Init.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ShowAgents.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +136,9 @@
     <EmbeddedResource Include="UserControls\LoadServices.resx">
       <DependentUpon>LoadServices.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\Init.resx">
+      <DependentUpon>Init.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\ShowAgents.resx">
       <DependentUpon>ShowAgents.cs</DependentUpon>
     </EmbeddedResource>
@@ -151,6 +160,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agents_information.xml" />
+    <None Include="Resources\minilogo2.png" />
+    <None Include="Resources\logo.png" />
     <None Include="Resources\watchservices.png" />
     <None Include="Resources\watchagents.png" />
     <None Include="Resources\loadservice.png" />

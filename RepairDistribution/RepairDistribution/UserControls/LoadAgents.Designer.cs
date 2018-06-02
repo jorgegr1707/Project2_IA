@@ -37,7 +37,7 @@
 			// btnAccept
 			// 
 			this.btnAccept.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnAccept.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+			this.btnAccept.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(147)))), ((int)(((byte)(30)))));
 			this.btnAccept.Location = new System.Drawing.Point(349, 170);
 			this.btnAccept.Margin = new System.Windows.Forms.Padding(4);
 			this.btnAccept.Name = "btnAccept";
@@ -49,7 +49,7 @@
 			// btnOpenFile
 			// 
 			this.btnOpenFile.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-			this.btnOpenFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+			this.btnOpenFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(147)))), ((int)(((byte)(30)))));
 			this.btnOpenFile.Location = new System.Drawing.Point(38, 112);
 			this.btnOpenFile.Margin = new System.Windows.Forms.Padding(4);
 			this.btnOpenFile.Name = "btnOpenFile";
@@ -88,7 +88,7 @@
 			this.Controls.Add(this.txtFileName);
 			this.Controls.Add(this.btnAccept);
 			this.Controls.Add(this.btnOpenFile);
-			this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(62)))), ((int)(((byte)(120)))), ((int)(((byte)(138)))));
+			this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
 			this.Name = "LoadAgents";
 			this.Size = new System.Drawing.Size(716, 628);
 			this.ResumeLayout(false);

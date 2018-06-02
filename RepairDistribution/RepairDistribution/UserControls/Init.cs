@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace RepairDistribution.UserControls
 {
-	public partial class Distribute : UserControl
+	public partial class Init : UserControl
 	{
-		public Distribute()
+		public Init()
 		{
 			InitializeComponent();
-		}
-
-		private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-		{
-
 		}
 	}
 }
