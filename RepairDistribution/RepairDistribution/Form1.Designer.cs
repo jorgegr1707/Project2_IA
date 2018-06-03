@@ -169,6 +169,7 @@
 			this.init1.Name = "init1";
 			this.init1.Size = new System.Drawing.Size(716, 628);
 			this.init1.TabIndex = 5;
+			this.init1.Load += new System.EventHandler(this.init1_Load);
 			// 
 			// distribute1
 			// 

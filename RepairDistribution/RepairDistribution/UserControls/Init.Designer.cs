@@ -40,16 +40,17 @@
 			this.label1.ForeColor = System.Drawing.Color.DarkGray;
 			this.label1.Location = new System.Drawing.Point(67, 71);
 			this.label1.Name = "label1";
-			this.label1.Size = new System.Drawing.Size(272, 46);
+			this.label1.Size = new System.Drawing.Size(220, 46);
 			this.label1.TabIndex = 0;
-			this.label1.Text = "¡Bienvenido a  ";
+			this.label1.Text = "Welcome to";
+			this.label1.Click += new System.EventHandler(this.label1_Click);
 			// 
 			// label2
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Lobster", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(147)))), ((int)(((byte)(30)))));
-			this.label2.Location = new System.Drawing.Point(305, 51);
+			this.label2.Location = new System.Drawing.Point(293, 57);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(188, 75);
 			this.label2.TabIndex = 1;
