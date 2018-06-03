@@ -14,7 +14,7 @@ namespace RepairDistribution
         ArrayList services;
         public List<List<Agent>> population;
         List<float> fitness;
-        int limit_gens;
+        int limit_gens;  //limit of generations
         Double mutation_percent;
         Random random = new Random();
 
@@ -32,7 +32,7 @@ namespace RepairDistribution
         //initial population
         public void generate_population()
         {
-            for (int i = 0; i < limit_gens; i++)
+            for (int i = 0; i < 10; i++)
             {
                 List<Agent> individual = new List<Agent>();
                 for (int j = 0; j < orders.Count; j++)
@@ -46,7 +46,7 @@ namespace RepairDistribution
             }
 
             /*Debug part*/
-            /*int pos = 0;
+            int pos = 0;
             foreach(List<Agent> agents in population)
             {
                 Console.WriteLine("Individual: " + pos);
@@ -55,10 +55,27 @@ namespace RepairDistribution
                     Console.WriteLine("\tID: " + agent.ID + ", name: " + agent.Name);
                 }
                 pos++;
-            }*/
+            }
             /*End debug part*/
             
         }
+
+        public int find_repeated(List<Agent> individual)
+        {;
+            for(int i = 0; i < individual.Count; i++)
+            {
+                for(int j = i+1; j < individual.Count; j++)
+                {
+                    if(individual[i].Equals(individual[j]))
+                    {
+                        return j;
+                    }
+                }
+            }
+            return individual.Count; 
+
+        }
+
         //check if every agent has a order (minimum)
         public List<Agent> check_distribution(List<Agent> individual)
         {
@@ -66,7 +83,7 @@ namespace RepairDistribution
             {
                 if (!individual.Contains(agent))
                 {
-                    individual[random.Next(individual.Count)] = agent;
+                    individual[find_repeated(individual)] = agent;
                 }
             }
             return individual;
@@ -90,19 +107,20 @@ namespace RepairDistribution
             List<int> commissions = new List<int>();
             for(int i = 0; i < individual.Count; i++)
             {
+                Console.WriteLine(individual[i].Name);
                 int sum = 0;
                 for (int j = 0; j < agents.Count; j++)
                 {
                     if (agents[j].Equals(individual[i]))
                     {
                         Order order = (Order)orders[i];
-                        sum = find_service(order).Commission;
+                        sum += find_service(order).Commission;
                     }
                 }
                 commissions.Add(sum);
             }
 
-            /* Debug part */
+            /* Debug part 
             foreach(int commission in commissions)
             {
                 Console.WriteLine(commission);
@@ -132,7 +150,20 @@ namespace RepairDistribution
 
         }
 
-        public bool infinite_fitness(List<Agent> individual)
+        /*public List<Agent> change_agent(List<Agent> individual)
+        {
+            for(int i = 0; i < orders.Count; i++)
+            {
+                for(int j = )
+                Order order = (Order)orders[i];
+                if(agent.ServiceCodes.Contains(order.ServiceCode))
+                {
+                    Agent change = 
+                }
+            }
+        }*/
+
+       public bool infinite_fitness(List<Agent> individual)
         {
             for (int i = 0; i < individual.Count; i++)
             {
@@ -143,11 +174,11 @@ namespace RepairDistribution
                     {
                         Order order = (Order)orders[i];
                         Agent agent = (Agent)agents[j];
-
-                        /*Pregunta: ¿No deberia sumar?, Porque creo que nunca llegaría a las 40 horas*/
-                        hours = find_service(order).Duration;
+                        
+                        hours += find_service(order).Duration;
                         if(hours > 40 || !agent.ServiceCodes.Contains(order.ServiceCode))
                         {
+                            Console.WriteLine("Agent: " + agent.Name + " Hours: " + hours + " Service: " + order.ServiceCode);
                             return true;
                         }
                     }
@@ -155,20 +186,21 @@ namespace RepairDistribution
             }
             return false;
         }
+
         public void calculate_fitness()
         {
             foreach(List<Agent> individual in population)
             {
-                if(infinite_fitness(individual))
+                if (infinite_fitness(individual))
                 {
                     fitness.Add((float)int.MaxValue);
+                                  
                 }
                 else
                 {
                     fitness.Add(variance(commission_agents(individual)));
-                }
-                
-            }
+                 }
+            } 
         }
 
         public void mutation()

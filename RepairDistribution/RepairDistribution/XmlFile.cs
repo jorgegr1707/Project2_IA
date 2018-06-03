@@ -13,10 +13,9 @@ namespace RepairDistribution
     {
         XDocument docAgents;      /*Document of agents*/
         XDocument docOrders;      /*Document of orders*/
-        XDocument docServices;
         public ArrayList dataAgents;    /*Array of agents information (ID, name, service codes)*/
         public ArrayList dataOrders;    /*Array of orders information(ID, client, service code)*/
-        public ArrayList dataServices;
+
 
         public XmlFile()
         {
@@ -85,12 +84,12 @@ namespace RepairDistribution
                 }
                 dataAgents.Add(dataAgent);
 
-                /*Debug part*/
+               /*Debug part
                 foreach (string da in dataAgent)
                 {
                     Console.WriteLine(da);
                 }
-                /*End Debug part*/
+                End Debug part*/
             }
         }
 
@@ -142,7 +141,7 @@ namespace RepairDistribution
                 
             }
 
-            /*Debug part*/
+            /*Debug part
             foreach (Agent a in agents)
             {
                 Console.WriteLine(a.ID);
@@ -152,7 +151,7 @@ namespace RepairDistribution
                     Console.WriteLine(code);
                 }
             }
-            /*End Debug part*/
+            End Debug part*/
             return agents;
         }
 
@@ -174,7 +173,7 @@ namespace RepairDistribution
                 orders.Add(order);
             }
 
-            /* Debug part */
+            /* Debug part 
             foreach(Order order in orders)
             {
                 Console.WriteLine(order.ID);

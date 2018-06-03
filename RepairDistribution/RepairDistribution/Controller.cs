@@ -29,7 +29,8 @@ namespace RepairDistribution
             genAlgorithm.generate_population();
 
             /*Prueba obtener comisiones*/
-            List<int> commissions = genAlgorithm.commission_agents(genAlgorithm.population[4]);
+            //List<int> commissions = genAlgorithm.commission_agents(genAlgorithm.population[4]);
+            genAlgorithm.calculate_fitness();
             
 
         }
