@@ -23,13 +23,25 @@ namespace RepairDistribution
             LoadXmlAgents();
             LoadXmlOrders();
             LoadServices();
-
-            /*Prueba crear poblacion inicial*/
-            genAlgorithm = new GeneticAlgorithm(agents, orders, services);
-            genAlgorithm.generate_population();
-            Console.Write("population generated");
             
-            //genAlgorithm.calculate_fitness();
+
+            genAlgorithm = new GeneticAlgorithm(agents, orders, services);
+
+            List<Agent> solution = genAlgorithm.get_solution();
+            List<List<int>> com = genAlgorithm.commission_and_hours_agents(solution);
+            for(int i = 0; i < solution.Count; i++)
+            {
+                Agent agent = (Agent)solution[i];
+                Console.WriteLine(agent.Name);
+            }
+            Console.WriteLine("----Debug----");
+            for(int j = 0; j < agents.Count; j++)
+            {
+                Agent agent = (Agent)agents[j];
+                List<int> comi = com[0];
+                List<int> hours = com[1];
+                Console.WriteLine(agent.Name + " " + comi[j] + " " + hours[j]);
+            }
 
 
         }
@@ -64,7 +76,6 @@ namespace RepairDistribution
 				xmlFile.LoadXmlOrders(Environment.CurrentDirectory + "\\data_orders.xml");
                 xmlFile.ReadXmlOrders();
                 orders = xmlFile.GetOrders();
-                Console.WriteLine(orders.Count);
 			}
             catch(Exception)
             { }
