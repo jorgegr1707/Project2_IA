@@ -15,6 +15,7 @@ namespace RepairDistribution
         public List<List<Agent>> population;
         List<float> fitness;
         int limit_gens;  //limit of generations
+        int cant_individuals;
         Double mutation_percent;
         Random random = new Random();
 
@@ -26,13 +27,14 @@ namespace RepairDistribution
             population = new List<List<Agent>>();
             fitness = new List<float>();
             limit_gens = 500;
+            cant_individuals = 10;
             mutation_percent = 0.02;
         }
 
         //initial population
         public void generate_population()
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < cant_individuals; i++)
             {
                 List<Agent> individual = new List<Agent>();
                 for (int j = 0; j < orders.Count; j++)
@@ -41,6 +43,7 @@ namespace RepairDistribution
 
                 }
                 individual = check_distribution(individual);
+                individual = redistribute_agents(individual);
                 population.Add(individual);
 
             }
@@ -101,32 +104,56 @@ namespace RepairDistribution
             return null;
         }
 
+        public List<Agent> find_agents_by_service(string service_code)
+        {
+            List<Agent> agents_by_service = new List<Agent>();
+            foreach(Agent agent in agents)
+            {
+                if(agent.ServiceCodes.Contains(service_code))
+                {
+                    agents_by_service.Add(agent);
+                }
+            }
+            return agents_by_service;
+        }
+
+        public List<Agent> redistribute_agents(List<Agent> individual)
+        {
+            for (int i = 0; i < individual.Count; i++)
+            {
+                Order order = (Order)orders[i];
+                Agent agent = (Agent)individual[i];
+                List<Agent> agents_by_service = find_agents_by_service(order.ServiceCode); //this list has the agents that can do this service
+                if (!agent.ServiceCodes.Contains(order.ServiceCode))//if this agent can´t do this service we have to change it with amother agent that can do it
+                {
+                    Agent swap = agents_by_service[random.Next(agents_by_service.Count)];//agent to replace the agent that can't do the service
+                    int index_swap = individual.IndexOf(swap);
+                    //make swap with this two agents
+                    individual[i] = swap;
+                    individual[index_swap] = agent;
+                }
+            }
+            return individual;
+        }
+
         //calculate commission for every agent
         public List<int> commission_agents(List<Agent> individual)
         {
             List<int> commissions = new List<int>();
-            for(int i = 0; i < individual.Count; i++)
+            for(int i = 0; i < agents.Count; i++)
             {
-                Console.WriteLine(individual[i].Name);
                 int sum = 0;
-                for (int j = 0; j < agents.Count; j++)
+                for (int j = 0; j < individual.Count; j++)
                 {
-                    if (agents[j].Equals(individual[i]))
+                    if (agents[i].Equals(individual[j]))
                     {
-                        Order order = (Order)orders[i];
+                        Order order = (Order)orders[j];
                         sum += find_service(order).Commission;
                     }
                 }
+                
                 commissions.Add(sum);
             }
-
-            /* Debug part 
-            foreach(int commission in commissions)
-            {
-                Console.WriteLine(commission);
-            }
-            /* End debug part*/
-
             return commissions;
         }
 
@@ -150,56 +177,13 @@ namespace RepairDistribution
 
         }
 
-        /*public List<Agent> change_agent(List<Agent> individual)
-        {
-            for(int i = 0; i < orders.Count; i++)
-            {
-                for(int j = )
-                Order order = (Order)orders[i];
-                if(agent.ServiceCodes.Contains(order.ServiceCode))
-                {
-                    Agent change = 
-                }
-            }
-        }*/
-
-       public bool infinite_fitness(List<Agent> individual)
-        {
-            for (int i = 0; i < individual.Count; i++)
-            {
-                int hours = 0;
-                for (int j = 0; j < agents.Count; j++)
-                {
-                    if (agents[j].Equals(individual[i]))
-                    {
-                        Order order = (Order)orders[i];
-                        Agent agent = (Agent)agents[j];
-                        
-                        hours += find_service(order).Duration;
-                        if(hours > 40 || !agent.ServiceCodes.Contains(order.ServiceCode))
-                        {
-                            Console.WriteLine("Agent: " + agent.Name + " Hours: " + hours + " Service: " + order.ServiceCode);
-                            return true;
-                        }
-                    }
-                }
-            }
-            return false;
-        }
 
         public void calculate_fitness()
         {
             foreach(List<Agent> individual in population)
             {
-                if (infinite_fitness(individual))
-                {
-                    fitness.Add((float)int.MaxValue);
-                                  
-                }
-                else
-                {
-                    fitness.Add(variance(commission_agents(individual)));
-                 }
+                fitness.Add(variance(commission_agents(individual)));
+                
             } 
         }
 
@@ -219,6 +203,7 @@ namespace RepairDistribution
                     
                 }
                 individual = check_distribution(individual);
+                individual = redistribute_agents(individual);
             }
         }
 

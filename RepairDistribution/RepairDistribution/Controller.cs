@@ -27,11 +27,10 @@ namespace RepairDistribution
             /*Prueba crear poblacion inicial*/
             genAlgorithm = new GeneticAlgorithm(agents, orders, services);
             genAlgorithm.generate_population();
-
-            /*Prueba obtener comisiones*/
-            //List<int> commissions = genAlgorithm.commission_agents(genAlgorithm.population[4]);
-            genAlgorithm.calculate_fitness();
+            Console.Write("population generated");
             
+            //genAlgorithm.calculate_fitness();
+
 
         }
 
