@@ -14,7 +14,8 @@ namespace RepairDistribution
     public partial class Form1 : Form
     {
         Controller controller = Controller.GetInstance();
-        public Form1()
+		private VoiceAgent agent = VoiceAgent.Instance;
+		public Form1()
         {
             InitializeComponent();
 			init1.Show(); 
@@ -80,7 +81,23 @@ namespace RepairDistribution
 
 		private void Form1_Load(object sender, EventArgs e)
 		{
+			//setting voice recognition and synthesis 
+			Timer timer = new Timer();
+			timer.Interval = 1;
+		
 
+			timer.Tick += delegate (object s, EventArgs ee)
+			{
+				((Timer)s).Stop();
+				try
+				{
+					agent.synthesizer.Speak("Welcome to smart");
+				}
+				catch
+				{
+
+				}
+			};
 		}
 
 		private void panel_image_Paint(object sender, PaintEventArgs e)
@@ -104,27 +121,9 @@ namespace RepairDistribution
 
 		}
 
+		private void init1_Load(object sender, EventArgs e)
+		{
 
-
-		/*private void btn_openfile_Click(object sender, EventArgs e)
-        {
-            
-            if (ofd.ShowDialog() == DialogResult.OK)
-            {
-                string extension;
-
-                extension = Path.GetExtension(ofd.FileName);
-
-                if(extension.Equals(".xml"))
-                {
-                    
-                }
-                txt_filename.Text = ofd.SafeFileName;
-                txt_filepath.Text = ofd.FileName;
-                XmlFile xmlFile = new XmlFile(ofd.FileName);
-                xmlFile.ReadXml();
-
-            }
-        }*/
+		}
 	}
 }
