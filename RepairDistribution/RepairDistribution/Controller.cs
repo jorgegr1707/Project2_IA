@@ -30,6 +30,7 @@ namespace RepairDistribution
 			genAlgorithm = new GeneticAlgorithm(agents, orders, services);
 			List<Agent> solution = genAlgorithm.get_solution();
 			List<List<int>> com = genAlgorithm.commission_and_hours_agents(solution);
+			Console.WriteLine("____________BEST GEN___________");
 			DataTable dt1 = new DataTable();
 			dt1.Columns.Add("Order ID");
 			dt1.Columns.Add("Client");
@@ -38,9 +39,19 @@ namespace RepairDistribution
 			for (int i = 0; i < solution.Count; i++)
 			{
 				Agent agent = (Agent)solution[i];
-				Console.WriteLine(agent.Name);
-				Order order = (Order)orders[i]; 
-				dt1.Rows.Add(new object[] { order.ID.ToString(), order.Client, order.ServiceCode, agent.Name });
+				Order order = (Order)orders[i];
+				if (agent == null)
+				{
+					Console.WriteLine("No agent available for this order");
+					dt1.Rows.Add(new object[] { order.ID.ToString(), order.Client, order.ServiceCode, "No Agent" });
+				}
+				else
+				{
+					Console.WriteLine(agent.Name);
+					dt1.Rows.Add(new object[] { order.ID.ToString(), order.Client, order.ServiceCode, agent.Name });
+				}
+				
+				
 			}
 			Console.WriteLine("----Debug----");
 			DataTable dt = new DataTable();

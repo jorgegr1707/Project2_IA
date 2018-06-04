@@ -13,7 +13,7 @@ namespace RepairDistribution
 
 		public VoiceAgent()
 		{
-			basicCommands();
+			
 		}
 
 		//using the singleton pattern can have a better performance when speaking and recognizing

@@ -173,9 +173,9 @@ namespace RepairDistribution
             {
                 return null;
             }
+
             if(agents_with_priority.Count == 0)
             {
-				
 				int value = random.Next(agents_by_service.Count);
 				agent = agents_by_service[value] as Agent;
             }
