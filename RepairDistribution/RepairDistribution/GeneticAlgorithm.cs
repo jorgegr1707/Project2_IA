@@ -168,6 +168,10 @@ namespace RepairDistribution
             List<Agent> agents_by_service = find_agents_by_service(service_code);
             List<Agent> agents_with_priority = agents_by_service_individual(agents_by_service, agents_without_job);
             Agent agent;
+            if(agents_by_service.Count == 0)
+            {
+                return null;
+            }
             if(agents_with_priority.Count == 0)
             {
                 agent = agents_by_service[random.Next(agents_by_service.Count)] as Agent;
@@ -261,6 +265,7 @@ namespace RepairDistribution
                 {
                     Order order = (Order) orders[i];
                     individual[i] = get_agent(individual, order.ServiceCode);
+                    
                 }
             }
             new_population.Add(individual);

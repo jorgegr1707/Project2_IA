@@ -29,10 +29,19 @@ namespace RepairDistribution
 
             List<Agent> solution = genAlgorithm.get_solution();
             List<List<int>> com = genAlgorithm.commission_and_hours_agents(solution);
+            Console.WriteLine("____________BEST GEN___________");
             for(int i = 0; i < solution.Count; i++)
             {
                 Agent agent = (Agent)solution[i];
-                Console.WriteLine(agent.Name);
+                if(agent == null)
+                {
+                    Console.WriteLine("No agent available for this order");
+                }
+                else
+                {
+                    Console.WriteLine(agent.Name);
+                }
+                
             }
             Console.WriteLine("----Debug----");
             for(int j = 0; j < agents.Count; j++)
