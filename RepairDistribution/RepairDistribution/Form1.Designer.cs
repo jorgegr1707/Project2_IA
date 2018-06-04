@@ -86,7 +86,7 @@
 			this.btnDistributeServiceOrders.Name = "btnDistributeServiceOrders";
 			this.btnDistributeServiceOrders.Size = new System.Drawing.Size(253, 99);
 			this.btnDistributeServiceOrders.TabIndex = 4;
-			this.btnDistributeServiceOrders.Text = "Distribute Service Orders";
+			this.btnDistributeServiceOrders.Text = "Assign";
 			this.btnDistributeServiceOrders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnDistributeServiceOrders.UseVisualStyleBackColor = true;
 			this.btnDistributeServiceOrders.Click += new System.EventHandler(this.btnDistributeServiceOrders_Click);
@@ -112,7 +112,7 @@
 			this.btnShowServiceOrders.Name = "btnShowServiceOrders";
 			this.btnShowServiceOrders.Size = new System.Drawing.Size(253, 99);
 			this.btnShowServiceOrders.TabIndex = 3;
-			this.btnShowServiceOrders.Text = "Show Service Orders";
+			this.btnShowServiceOrders.Text = "Show Orders";
 			this.btnShowServiceOrders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnShowServiceOrders.UseVisualStyleBackColor = true;
 			this.btnShowServiceOrders.Click += new System.EventHandler(this.btnShowServiceOrders_Click);
@@ -142,7 +142,7 @@
 			this.btnLoadServiceOrders.Name = "btnLoadServiceOrders";
 			this.btnLoadServiceOrders.Size = new System.Drawing.Size(253, 99);
 			this.btnLoadServiceOrders.TabIndex = 2;
-			this.btnLoadServiceOrders.Text = "Load Service Orders";
+			this.btnLoadServiceOrders.Text = "Load Orders";
 			this.btnLoadServiceOrders.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
 			this.btnLoadServiceOrders.UseVisualStyleBackColor = true;
 			this.btnLoadServiceOrders.Click += new System.EventHandler(this.btnLoadServiceOrders_Click);
@@ -239,7 +239,7 @@
 			this.Controls.Add(this.panel_image);
 			this.Controls.Add(this.panel1);
 			this.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(113)))), ((int)(((byte)(188)))));
-			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
 			this.Name = "Form1";
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.panel1.ResumeLayout(false);

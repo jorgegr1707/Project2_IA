@@ -144,6 +144,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="agents_information.xml" />
+    <None Include="Resources\Smart1.png" />
+    <None Include="Resources\Smart.png" />
     <None Include="Resources\minilogo2.png" />
     <None Include="Resources\logo.png" />
     <None Include="Resources\watchservices.png" />

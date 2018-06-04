@@ -130,6 +130,9 @@
   <data name="watchagents" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\watchagents.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Smart" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Smart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="distribution" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\distribution.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,5 +141,8 @@
   </data>
   <data name="minilogo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\minilogo2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Smart1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Smart1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -91,11 +91,22 @@ namespace RepairDistribution
 			if (e.Result.Text == "Load Agents")
 			{
 				agent.synthesizer.Speak("Loading Agents from Default File: Data Agents XML");
-				
+				init1.Hide();
+				loadAgentsUC.Show();
+				loadServices1.Hide();
+				showAgents1.Hide();
+				showServices1.Hide();
+				distribute1.Hide();
 			}
 			else if (e.Result.Text == "Load Orders")
 			{
 				agent.synthesizer.Speak("Loading Orders of Services from Default File: Data Orders XML");
+				init1.Hide();
+				loadAgentsUC.Hide();
+				loadServices1.Show();
+				showAgents1.Hide();
+				showServices1.Hide();
+				distribute1.Hide();
 			}
 			else if (e.Result.Text == "Show Agents")
 			{
@@ -159,7 +170,13 @@ namespace RepairDistribution
 				((Timer)s).Stop();
 				try
 				{
-					agent.synthesizer.Speak("Welcome to smart, Show Service");
+					agent.synthesizer.Speak("Welcome to smart");
+					agent.synthesizer.Speak("SmArt is a program that" +
+						"helps you to distribute" +
+						"Agents to different orders");
+					agent.synthesizer.Speak("Voice Commands: Load Agents," +
+						"Show Services, Load Orders," +
+						"Show Orders, Assign");
 					CultureInfo ci = new CultureInfo("en-EN");
 					agent.setListener(new SpeechRecognitionEngine(ci));
 					listener = agent.getListener();
