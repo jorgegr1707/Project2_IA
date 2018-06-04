@@ -14,6 +14,7 @@ namespace RepairDistribution.UserControls
 		{
 			InitializeComponent();
 			dataGridView1.EnableHeadersVisualStyles = false;
+			
 		}
 		
 		public void LoadAgentsDataGridView()
@@ -30,7 +31,6 @@ namespace RepairDistribution.UserControls
 				dt.Rows.Add(new object[] { a.ID, a.Name, result });
 			}
 			if (dataGridView1.DataSource != null) {
-				Console.WriteLine("al menos entra aca> ?"); 
 				dataGridView1.DataSource = null;
 				dataGridView1.Rows.Clear(); 
 			}

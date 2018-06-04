@@ -25,4 +25,22 @@
       <code>IS</code>
     </service_codes>
   </agent>
+   <agent>
+    <id>4</id>
+    <name>Ruth xD</name>
+    <service_codes>
+      <code>IS</code>
+      <code>ICE</code>
+      <code>IPD</code>
+    </service_codes>
+  </agent>
+   <agent>
+    <id>5</id>
+    <name>Arianita</name>
+    <service_codes>
+      <code>IS</code>
+      <code>ICE</code>
+      <code>IPD</code>
+    </service_codes>
+  </agent>
 </agents>

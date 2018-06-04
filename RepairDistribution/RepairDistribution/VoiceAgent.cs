@@ -29,18 +29,16 @@ namespace RepairDistribution
 			}
 		}
 
-		
-		public void basicCommands()
+		public void setListener(SpeechRecognitionEngine listener)
 		{
-			commands.Add("Load Agents");
-			commands.Add("Load Services Orders");
-			commands.Add("Load Default File");
-			commands.Add("Show Agents");
-			commands.Add("Show Services Orders");
-			commands.Add("Distribute");
-			commands.Add("Exit");
-			commands.Add("Cancel"); 
+			recognizer = listener;
 		}
+
+		public SpeechRecognitionEngine getListener()
+		{
+			return recognizer; 
+		}
+
 
 	}
 }

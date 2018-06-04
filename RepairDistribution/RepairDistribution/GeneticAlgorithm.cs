@@ -166,6 +166,7 @@ namespace RepairDistribution
         {
             List<Agent> agents_without_job = agents_not_busy(individual);
             List<Agent> agents_by_service = find_agents_by_service(service_code);
+
             List<Agent> agents_with_priority = agents_by_service_individual(agents_by_service, agents_without_job);
             Agent agent;
             if(agents_by_service.Count == 0)
@@ -174,7 +175,9 @@ namespace RepairDistribution
             }
             if(agents_with_priority.Count == 0)
             {
-                agent = agents_by_service[random.Next(agents_by_service.Count)] as Agent;
+				
+				int value = random.Next(agents_by_service.Count);
+				agent = agents_by_service[value] as Agent;
             }
             else
             {
